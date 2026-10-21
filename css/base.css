@@ -1,0 +1,242 @@
+body{
+	padding-top: 1em;
+	background-image:  url(../images/seemless.jpg);
+	width: 960px;
+	margin:0 auto;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+h1{
+	font-family: "Times New Roman", Times, serif;
+	float: left;
+	margin: 0; padding: 0 0 0 0em; color: #fff;  text-indent: -5000px; width: 504px; height: 68px; background-image: url(../images/header.jpg); 	background-repeat: no-repeat;
+	margin-left: 3em;
+}
+h2{
+	font-family: "Times New Roman", Times, serif;
+	padding-left: 1em;
+}
+h3{
+	padding-left: 1em;
+	font-size: 1em;
+}
+#left{
+	float: left;
+	width: 375px;
+	padding-top: 2em;
+}
+#right{
+	float: right;
+	width: 490px;
+	margin-right: 3em;
+	padding-top: 6em;
+	background-image:  url(../images/paperbg4.jpg);
+	height: 400px;
+	background-repeat: no-repeat;
+}
+#right h2{
+	padding: 0 0 0 1em;
+	margin: 0;
+}
+#social{
+	display: inline;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+
+}
+#social li a{
+display: block;
+text-decoration: none;
+color: #000;
+text-indent: -5000px;
+float: left;
+}
+#social a#myspace {
+	background-image:  url(../images/myspace.jpg);
+	background-repeat: no-repeat;
+	width: 72px;
+	height: 64px;
+}
+#social a#youtube {
+	background-image:  url(../images/youtube.jpg);
+	background-repeat: no-repeat;
+	width: 99px;
+	height: 60px;
+}
+#social a#buydvd {
+	background-image:  url(../images/buydvd.jpg);
+	background-repeat: no-repeat;
+	width: 371px;
+	height: 320px;
+}
+
+
+#scroll{
+	margin-top: 1em;
+	padding-right: 1em;
+
+	height: 305px;
+	width: 490px;
+   overflow:auto;
+}
+
+#right p{
+padding-left: 2em;
+padding-right: 5em;
+font-size: .8em;
+}
+
+#footer{
+	clear: both;
+}
+#navcontainer ul
+{
+clear:both;
+margin: 0;
+padding-top: 0px;
+list-style-type: none;
+text-align: center;
+font-family: arial;
+font-size: 14px;
+height: 82px;
+}
+
+#navcontainer ul li { display: inline; }
+
+#navcontainer ul li a{
+display: block;
+float: left;
+text-decoration: none;
+color: #000;
+text-indent: -5000px;
+}
+
+#navcontainer ul li a.news
+{
+background: url(../images/news.jpg) top left no-repeat;
+width: 108px;
+height: 67px;
+}
+
+#navcontainer ul li a.trailer
+{
+
+background: url(../images/trailer.jpg) top left no-repeat;
+width: 115px;
+height: 85px;
+}
+#navcontainer ul li a.aboutfilm
+{
+background: url(../images/aboutfilm.jpg) top left no-repeat;
+width: 101px;
+height: 85px;
+}
+#navcontainer ul li a.aboutmakers
+{
+background: url(../images/aboutmakers.jpg) top left no-repeat;
+width: 94px;
+height: 88px;
+}
+#navcontainer ul li a.photos{
+	background: url(../images/photos.jpg) top left no-repeat;
+	width: 86px;
+	height: 105px;
+}
+#navcontainer ul li a.updates{
+	background: url(../images/updates.jpg) top left no-repeat;
+	width: 122px;
+	height: 79px;
+}
+#navcontainer ul li a.screenings{
+	background: url(../images/screenings.jpg) top left no-repeat;
+	width: 108px;
+	height: 67px;
+}
+#navcontainer ul li a.press{
+	background: url(../images/press.jpg) top left no-repeat;
+	width: 108px;
+	height: 67px;
+}
+
+
+
+
+.thumbnail{
+float: left;
+background: transparent;
+margin: 0;
+padding: 2px;
+list-style: none;
+}
+
+.thumbnail img{
+clear: both;
+border: 0;
+}
+
+.thumbnail:hover {
+
+
+
+}
+.mainimage{
+float: left;
+background: Black;
+margin: 20px 15px 15px 50px;
+padding: 5px;
+border: 1px solid gray;
+}
+
+.mainimage img{
+clear: both;
+}
+
+.mainimage:hover {
+background: #303030;
+/*background: #E6E6E6;*/
+
+}
+.clearboth { clear: both; }
+
+.containingbox{
+	width: 400px
+	color: white;
+	margin: 0;
+	padding: 0;
+    list-style: none;	
+}
+
+.containingbox li{
+list-style: none;
+}
+.containingbox li a:hover{
+	color: White;
+}
+form{
+padding-left: 1em;
+	width: 400px;
+}
+fieldset{
+	border: 0;
+}
+label{
+
+	
+}
+input{
+
+}
+p#thumb{
+	font-size: .6em;
+	padding-left: 3em;
+}
+p#updates{
+	font-size: .8em;
+	padding-right: 4em;
+}
+dt{
+	padding-left: 2em;
+	font-weight: bold;
+	font-size: .8em;
+	padding-top: .5em
+}

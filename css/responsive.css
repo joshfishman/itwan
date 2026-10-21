@@ -1,0 +1,83 @@
+/* Mobile adaptation layer for the I Think We're Alone Now site clone.
+   Loaded AFTER base.css. Desktop rendering is intentionally left unchanged:
+   every structural override lives inside the max-width media query below.
+   The only global rule makes raster images never overflow their container,
+   which is a no-op on the desktop layout. */
+
+img { max-width: 100%; height: auto; }
+
+@media (max-width: 1000px) {
+  * { box-sizing: border-box; }
+
+  html, body { overflow-x: hidden; }
+
+  body {
+    width: auto;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Header wordmark (background image) scales with the viewport */
+  h1 {
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 504px;
+    height: auto;
+    aspect-ratio: 504 / 68;
+    background-size: contain;
+  }
+
+  /* Two-column layout linearizes into a single column */
+  #left, #right {
+    float: none;
+    width: 100%;
+    max-width: 490px;
+    margin: 0 auto;
+  }
+  #right {
+    height: auto;
+    min-height: 0;
+    padding-top: 1.5em;
+    margin-right: auto;
+    background-size: contain;
+  }
+  #right p { padding-left: 1em; padding-right: 1em; }
+
+  /* The inner "scroll" box becomes natural flow on touch devices */
+  #scroll {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  /* Image-button nav wraps and centers instead of overflowing */
+  #navcontainer ul { height: auto; display: flex; flex-wrap: wrap;
+    justify-content: center; align-items: center; gap: 4px; }
+  #navcontainer ul li { display: inline-flex; }
+  #navcontainer ul li a { float: none; }
+
+  /* Social / buy buttons (background images) scale down */
+  #social { display: flex; flex-wrap: wrap; justify-content: center;
+    align-items: center; gap: 8px; }
+  #social li a { float: none; }
+  #social a#buydvd {
+    width: 100%; max-width: 371px; height: auto;
+    aspect-ratio: 371 / 320; background-size: contain;
+  }
+
+  /* Forms and photo gallery */
+  form, .containingbox { width: 100%; max-width: 400px; }
+  .mainimage { float: none; margin: 16px auto; max-width: 100%; }
+  .mainimage img { width: 100%; height: auto; }
+  #thumbnails, ul.thumbnails { text-align: center; }
+}
+
+/* Extra tightening for small phones */
+@media (max-width: 480px) {
+  #right p { font-size: .85em; }
+  .thumbnail img { width: 64px; height: 64px; }
+}

@@ -1,50 +1,57 @@
 # I Think We're Alone Now
 
-A static single-page site, deployed to **GitHub Pages** via GitHub Actions.
-Plain HTML + CSS — no build step, no dependencies.
+A mobile-friendly clone of the documentary site
+**ithinkwerealonenow.com**, hosted on GitHub Pages.
+
+The pages, styles, images, photos, and audio are mirrored from the live site.
+The desktop layout is preserved exactly; a small responsive layer makes it
+usable on phones and tablets.
+
+## What's here
 
 ```
-itwan/
-├── index.html                  # the page
-├── styles.css                  # all styling (theme tokens at the top)
-├── .nojekyll                   # tell Pages to serve files as-is (skip Jekyll)
-└── .github/workflows/deploy.yml  # auto-deploy on push to main
+index.html          splash / entry page
+news.html           News
+trailer.htm         Trailer
+aboutfilm.htm       About the Film
+aboutmakers.htm     About the Filmmakers
+photos.htm          Photos (click-to-swap gallery)
+updates.htm         Sign up for Updates
+screenings.htm      Screenings
+press.htm           Press
+css/base.css        original stylesheet (unchanged)
+css/responsive.css  mobile adaptation layer (added)
+images/ photos/     site artwork, gallery photos + thumbnails
+radioedit.mp3       audio
+.nojekyll           serve files as-is on Pages (no Jekyll)
+.github/workflows/deploy.yml   auto-deploy to Pages on push to main
 ```
 
-## Deploy it (one-time setup)
+## How the mobile support works
 
-1. **Create a repo on GitHub** and push this folder to it:
+- A `<meta name="viewport">` tag was added to every page.
+- `css/responsive.css` is loaded **after** `base.css`. All of its layout
+  changes live inside a `@media (max-width: 1000px)` block, so the desktop
+  rendering is identical to the original. On narrow screens it linearizes the
+  two-column layout, makes images fluid, scales the header, and wraps the
+  image-button navigation.
 
-   ```bash
-   git remote add origin https://github.com/<you>/<repo>.git
-   git push -u origin main
-   ```
+## Changes from the original (besides mobile)
 
-2. **Turn on Pages via Actions.** In the repo on GitHub:
-   **Settings → Pages → Build and deployment → Source → "GitHub Actions".**
+- Absolute links that pointed back at `ithinkwerealonenow.com` were made
+  relative, so the clone navigates within itself.
+- One dead `screenings.html` link was corrected to `screenings.htm`.
 
-That's it. The included workflow publishes on every push to `main`. Watch it
-run under the repo's **Actions** tab; when it finishes, the live URL appears
-there and under **Settings → Pages**.
+## Deploy / update
 
-- Default URL: `https://<you>.github.io/<repo>/`
-- User/org site (repo named `<you>.github.io`): `https://<you>.github.io/`
+Pages is configured to build from the **GitHub Actions** source. Every push to
+`main` redeploys automatically — watch it under the repo's **Actions** tab.
 
-## Edit it
+- Live URL: `https://joshfishman.github.io/itwan/`
 
-Change `index.html` / `styles.css`, commit, and push to `main` — the site
-redeploys automatically. Brand colors and fonts are tokens at the top of
-`styles.css` (`:root`); light mode is handled for you.
-
-## Custom domain (optional)
-
-Add a `CNAME` file at the repo root containing just the domain
-(e.g. `example.com`), point DNS at GitHub Pages, then set the domain under
-**Settings → Pages**.
+To update, edit the files, commit, and push to `main`.
 
 ## Preview locally
-
-Any static server works, e.g.:
 
 ```bash
 python3 -m http.server 8000
