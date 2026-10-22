@@ -5,12 +5,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta name= "keywords" content="movie, documentary, tiffany, pop, singer, stalker, obsession">
     <link href="css/responsive.css" media="screen" rel="Stylesheet" type="text/css" />
+    <style>
+      /* Splash page: center the intro image on a full-height black screen so it
+         scales cleanly from phone to desktop (image artwork already sits on black). */
+      html, body { margin: 0; padding: 0; }
+      body.splash {
+        background: #000;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        box-sizing: border-box;
+      }
+      body.splash a { display: block; line-height: 0; width: 100%; max-width: 864px; }
+      body.splash img { width: 100%; height: auto; display: block; }
+    </style>
 </head>
-<center><p>&nbsp;<p>
-<body bgcolor="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<body class="splash" bgcolor="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <!-- ImageReady Slices (splashpage.psd) -->
 <a href="news.html">
-	<img src="images/splashpageintro.gif" width="864" height="466" border="0" alt=""></a>
+	<img src="images/splashpageintro.gif" width="864" height="466" border="0" alt="I Think We're Alone Now — a feature documentary. Click to enter."></a>
 <!-- End ImageReady Slices -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
