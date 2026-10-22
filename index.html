@@ -72,7 +72,9 @@
         color: #8ab4ff;
       }
       @media (max-width: 560px) {
-        .awards img { height: 46px; }
+        /* Keep all five awards in a single horizontal row across the top */
+        .awards { flex-wrap: nowrap; gap: 5px; }
+        .awards img { height: auto; width: calc((100% - 20px) / 5); }
         .reviews { grid-template-columns: 1fr; max-width: 420px; gap: 20px; }
       }
     </style>
