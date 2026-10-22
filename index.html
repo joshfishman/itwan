@@ -3,39 +3,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>I Think We're Alone Now Documentary</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name= "keywords" content="movie, documentary, tiffany, pop, singer, stalker, obsession">
+<meta name="keywords" content="movie, documentary, tiffany, pop, singer, stalker, obsession">
     <link href="css/responsive.css" media="screen" rel="Stylesheet" type="text/css" />
     <style>
-      /* Splash page: center the intro image on a full-height black screen so it
-         scales cleanly from phone to desktop (image artwork already sits on black). */
+      /* Splash page: rebuilt as a responsive stack so it reads well on any
+         screen — awards across the top, logo in the middle, reviews at the
+         bottom. The laurel and logo graphics are sliced from the original
+         splash image; reviews are set as live text. */
       html, body { margin: 0; padding: 0; }
       body.splash {
         background: #000;
+        color: #fff;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
         min-height: 100vh;
         min-height: 100dvh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 16px;
+        padding: clamp(24px, 5vw, 56px) 16px;
         box-sizing: border-box;
       }
-      body.splash a { display: block; line-height: 0; width: 100%; max-width: 864px; }
-      body.splash img { width: 100%; height: auto; display: block; }
+      .splash-inner {
+        width: 100%;
+        max-width: 960px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(22px, 4.5vh, 48px);
+      }
+      /* Awards — horizontal row across the top */
+      .awards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(8px, 1.6vw, 16px);
+      }
+      .awards img { height: clamp(50px, 6.2vw, 64px); width: auto; }
+      /* Logo */
+      .logo { display: block; line-height: 0; }
+      .logo img { width: 100%; max-width: 440px; height: auto; }
+      /* Enter call-to-action */
+      .enter { display: block; line-height: 0; transition: opacity .15s ease; }
+      .enter:hover { opacity: .8; }
+      .enter img { width: 100%; max-width: 300px; height: auto; }
+      /* Reviews — set as live text at the bottom */
+      .reviews {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(16px, 3vw, 34px);
+        width: 100%;
+        max-width: 760px;
+      }
+      .reviews blockquote {
+        margin: 0;
+        font-size: .82rem;
+        line-height: 1.5;
+        color: #ececec;
+        text-align: center;
+      }
+      .reviews .stars { font-size: 1.4rem; letter-spacing: .18em; color: #fff; }
+      .reviews cite {
+        display: block;
+        margin-top: .45em;
+        font-style: normal;
+        font-weight: bold;
+        color: #8ab4ff;
+      }
+      @media (max-width: 560px) {
+        .awards img { height: 46px; }
+        .reviews { grid-template-columns: 1fr; max-width: 420px; gap: 20px; }
+      }
     </style>
 </head>
-<body class="splash" bgcolor="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<!-- ImageReady Slices (splashpage.psd) -->
-<a href="news.html">
-	<img src="images/splashpageintro.gif" width="864" height="466" border="0" alt="I Think We're Alone Now — a feature documentary. Click to enter."></a>
-<!-- End ImageReady Slices -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-1890158-3");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
+<body class="splash" bgcolor="#000000">
+<div class="splash-inner">
+
+  <div class="awards">
+    <img src="images/splash/award1_slamdance.png" alt="World Premiere — Slamdance 2008" />
+    <img src="images/splash/award2_truefalse.png" alt="Official Selection — True/False 2008" />
+    <img src="images/splash/award3_melbourne.png" alt="Official Selection — Melbourne International Film Festival 2008" />
+    <img src="images/splash/award4_fantasia.png" alt="Gold Best Documentary — Fantasia International Film Festival 2008" />
+    <img src="images/splash/award5_idfa.png" alt="Official Selection — IDFA Documentary Film Festival 2008" />
+  </div>
+
+  <a class="logo" href="news.html"><img src="images/splash/logo.png" alt="I Think We're Alone Now — a feature documentary" /></a>
+
+  <a class="enter" href="news.html"><img src="images/splash/enter.png" alt="Click here to enter" /></a>
+
+  <div class="reviews">
+    <blockquote>"..I thought that it lent the film a unique honesty, that I don't think you see in a lot of other documentaries."<cite>Josh Slates, NPR</cite></blockquote>
+    <blockquote>"...While it's easy to focus on the pair's troubling obsessions, Donnelly's project is more of a story of unrequited love."<cite>Rolling Stone</cite></blockquote>
+    <blockquote>"The film is a fascinating look at celebrity obsession from the point of view of the obsessed..."<cite>Chicago Tribune</cite></blockquote>
+    <blockquote><span class="stars">&#9733;&#9733;&#9733;&#9733;</span><cite>Film Threat</cite></blockquote>
+  </div>
+
+</div>
 </body>
 </html>
